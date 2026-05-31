@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מדעני בינה מלאכותית: AI לטובת הכלל</title>
+    
+    <!-- Google Fonts for Hebrew & Code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config for Custom Animations & Fonts -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Heebo', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    animation: {
+                        blob: "blob 7s infinite",
+                    },
+                    keyframes: {
+                        blob: {
+                            "0%": { transform: "translate(0px, 0px) scale(1)" },
+                            "33%": { transform: "translate(30px, -50px) scale(1.1)" },
+                            "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
+                            "100%": { transform: "translate(0px, 0px) scale(1)" },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <style>
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+    </style>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-800 selection:bg-purple-200 font-sans antialiased overflow-x-hidden">
+
+    <!-- Header & Hero Section -->
+    <header class="relative overflow-hidden bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 text-white">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        
+        <div class="relative max-w-6xl mx-auto px-6 py-24 md:py-32 flex flex-col items-center text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm mb-8">
+                <i data-lucide="brain-circuit" class="w-5 h-5 text-purple-300"></i>
+                <span class="text-sm font-medium tracking-wide text-purple-100">מגמת מדעי המחשב בשילוב AI</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
+                מדעני בינה מלאכותית:<br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+                    AI לטובת הכלל
+                </span>
+            </h1>
+            <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mb-10 font-light">
+                מהמכינה למגמת מדעני בינה מלאכותית - הופכים קוד להשפעה חברתית.
+            </p>
+        </div>
+    </header>
+
+    <!-- The Human Problem -->
+    <section class="py-20 bg-white relative">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <i data-lucide="heart-handshake" class="w-12 h-12 mx-auto text-rose-500 mb-6"></i>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-8">הבעיה האנושית</h2>
+            <blockquote class="text-2xl md:text-3xl text-slate-700 font-medium italic mb-8 relative">
+                <span class="text-blue-200 text-6xl absolute -top-6 -right-8">"</span>
+                שאלה טכנולוגית טובה מתחילה בשאלה אנושית.
+                <span class="text-blue-200 text-6xl absolute -bottom-10 -left-6">"</span>
+            </blockquote>
+            <p class="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+                כל טכנולוגיה גדולה מתחילה בבירור עמוק: למי אנחנו עוזרים? מהו הצורך האמיתי שלהם? ואיך הבינה המלאכותית יכולה לשרת אותם בצורה אחראית, בטוחה ומועילה?
+            </p>
+        </div>
+    </section>
+
+    <!-- Theoretical Foundations -->
+    <section class="py-20 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">אבני הבניין של ה-AI</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto text-lg">
+                    הבסיס התיאורטי שעליו מושתתת כל מערכת חכמה בעולם החדש.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
+                        <i data-lucide="database" class="w-7 h-7 text-blue-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">נתונים (Data)</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        חומר הגלם של הבינה המלאכותית. המידע שמזין את המערכות ומאפשר להן ללמוד דפוסים, לזהות מגמות ולקבל החלטות מבוססות מציאות.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-purple-600 transition-colors">
+                        <i data-lucide="cpu" class="w-7 h-7 text-purple-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">מודל (Model)</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        ייצוג מפושט של מערכת מורכבת. המודל מתמצת את החוקיות שנלמדה מהנתונים לכדי מנגנון שמסוגל לבצע חיזויים או סיווגים.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-indigo-600 transition-colors">
+                        <i data-lucide="layers" class="w-7 h-7 text-indigo-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">אבסטרקציה (Abstraction)</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        הפחתת רעשים כדי לשמור רק על המאפיינים הקריטיים. זהו למעשה <strong class="text-indigo-700 bg-indigo-50 px-1 rounded">פישוט נתונים לטובת מטרה מסוימת</strong>, המאפשר למערכת להתמקד בעיקר.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Inspiration (Kira Radinsky) -->
+    <section class="py-20 bg-gradient-to-b from-white to-blue-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12 bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-blue-100 relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-32 h-32 bg-blue-500 rounded-br-full opacity-10"></div>
+                
+                <div class="w-full lg:w-1/3 flex justify-center">
+                    <div class="relative">
+                        <div class="w-48 h-48 md:w-64 md:h-64 rounded-full bg-slate-200 overflow-hidden border-4 border-white shadow-lg flex items-center justify-center text-slate-400 relative z-10 text-center px-4">
+                            <span class="text-sm font-medium border-2 border-dashed border-slate-300 rounded-full w-full h-full flex items-center justify-center">
+                                
+                            </span>
+                        </div>
+                        <div class="absolute inset-0 bg-blue-400 rounded-full blur-2xl opacity-20 -z-10 translate-y-4 translate-x-4"></div>
+                    </div>
+                </div>
+                
+                <div class="w-full lg:w-2/3">
+                    <div class="inline-flex items-center gap-2 text-blue-600 font-semibold mb-3 tracking-wide text-sm uppercase">
+                        <i data-lucide="lightbulb" class="w-4 h-4"></i>
+                        נבחרת המשפיעים
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">ד"ר קירה רדינסקי</h2>
+                    <h3 class="text-xl text-blue-700 mb-6 font-medium">חלוצה ישראלית בבינה מלאכותית</h3>
+                    <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                        דוגמה חיה לשימוש בטכנולוגיה למען האנושות. ד"ר רדינסקי <strong>משתמשת בחיזוי מבוסס נתונים לטובת המערך הרפואי (Diagnostic Robotics)</strong>. בעזרת אלגוריתמים חכמים, היא מצליחה לזהות סימני אזהרה מוקדמים, לחזות התפרצויות של מחלות, ולשפר את פני הבריאות העולמית.
+                    </p>
+                    <div class="flex items-center gap-3 text-sm font-medium text-slate-500 bg-slate-50 py-3 px-5 rounded-lg inline-flex border border-slate-100 flex-wrap">
+                        <i data-lucide="activity" class="w-4 h-4 text-rose-500"></i>
+                        בעיה רפואית <i data-lucide="arrow-left" class="w-3 h-3"></i> 
+                        טכנולוגיית נתונים <i data-lucide="arrow-left" class="w-3 h-3"></i> 
+                        הצלת חיים
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Implementation -->
+    <section class="py-20 bg-slate-900 text-slate-300 relative overflow-hidden">
+        <!-- Tech Background Pattern -->
+        <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(#4f46e5 1px, transparent 1px); background-size: 30px 30px;"></div>
+        
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">שלב התכנות והיישום</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto text-lg">
+                    מהתיאוריה אל המעשה: כך אנחנו מחברים קוד, נתונים ואנשים.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-slate-800/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-700 hover:border-blue-500/50 transition-colors">
+                    <i data-lucide="search" class="w-9 h-9 text-blue-400 mb-6"></i>
+                    <h3 class="text-2xl font-bold text-white mb-4">חקר משפיעים (Exploring the Team)</h3>
+                    <p class="leading-relaxed mb-6">
+                        אנו חוקרים דמויות מפתח בעולם הטכנולוגיה כדי להבין את השרשרת הקריטית שמניעה פיתוחים משמעותיים:
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 bg-slate-900/50 p-3 rounded-lg">
+                            <div class="w-8 h-8 rounded bg-red-500/20 text-red-400 flex items-center justify-center font-bold">1</div>
+                            <span class="text-white">זיהוי הבעיה</span>
+                        </li>
+                        <li class="flex items-center gap-3 bg-slate-900/50 p-3 rounded-lg">
+                            <div class="w-8 h-8 rounded bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold">2</div>
+                            <span class="text-white">בחירת הטכנולוגיה</span>
+                        </li>
+                        <li class="flex items-center gap-3 bg-slate-900/50 p-3 rounded-lg">
+                            <div class="w-8 h-8 rounded bg-green-500/20 text-green-400 flex items-center justify-center font-bold">3</div>
+                            <span class="text-white">יצירת השפעה (Impact)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-gradient-to-br from-indigo-900/40 to-purple-900/40 backdrop-blur-sm p-8 rounded-2xl border border-purple-500/30 hover:border-purple-400/60 transition-colors">
+                    <i data-lucide="code-2" class="w-9 h-9 text-purple-400 mb-6"></i>
+                    <h3 class="text-2xl font-bold text-white mb-4">יועץ המיזמים החכם</h3>
+                    <p class="leading-relaxed mb-4">
+                        פרויקט הדגל שלנו בפייתון המחובר ל-<strong>Gemini API</strong>. התוכנית מקבלת כקלט "צורך קהילתי", ונעזרת בבינה מלאכותית יוצרת כדי להפיק:
+                    </p>
+                    <div class="flex flex-wrap gap-4 mb-6">
+                        <div class="bg-purple-500/20 text-purple-200 px-4 py-2 rounded-lg text-sm border border-purple-500/30">3 פתרונות פרקטיים</div>
+                        <div class="bg-rose-500/20 text-rose-200 px-4 py-2 rounded-lg text-sm border border-rose-500/30">שאלה אתית קריטית אחת</div>
+                    </div>
+                    <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-700/50">
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="user-check" class="w-5 h-5 text-emerald-400 shrink-0 mt-1"></i>
+                            <p class="text-sm text-slate-300 italic">
+                                זהו שלב ה-<strong>Tinkering</strong> (ניסוי וטעייה) שבו התלמידים הופכים מצרכנים למפתחים, ומתנסים בקוד חי עם מודלי שפה.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Step by Step Guide (Colab) -->
+    <section class="py-20 bg-slate-100 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-6">
+            
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center justify-center p-3 bg-blue-100 text-blue-600 rounded-full mb-4">
+                    <i data-lucide="wrench" class="w-8 h-8"></i>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">מדריך מעשי: בניית חוקר משפיעים</h2>
+                <p class="text-slate-600 text-lg">
+                    מדריך זה יוביל אתכם צעד אחר צעד בפיתוח פרויקט הדגל שלכם בפייתון. נחבר את סביבת הפיתוח שלנו למוח של <strong>Gemini</strong>, וניצור כלי חכם שחוקר דמויות מפתח טכנולוגיות כדי להבין את השרשרת הקריטית: <strong class="text-blue-700">בעיה אנושית ⬅️ טכנולוגיה ⬅️ השפעה חיובית</strong>.
+                </p>
+            </div>
+
+            <!-- Step 1 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 mb-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-10 h-10 bg-blue-600 text-white font-bold rounded-lg flex items-center justify-center text-xl shrink-0">1</div>
+                    <h3 class="text-2xl font-bold text-slate-800">יצירת מפתח מפתחים (API Key)</h3>
+                </div>
+                <p class="text-slate-600 mb-4">כדי שהקוד שלנו יוכל "לדבר" עם הבינה המלאכותית של גוגל, אנחנו צריכים תעודת זהות ייחודית שנקראת API Key.</p>
+                <ol class="list-decimal list-inside space-y-2 text-slate-700 marker:text-blue-500 marker:font-bold">
+                    <li>היכנסו לאתר <a href="https://aistudio.google.com/" target="_blank" class="text-blue-600 hover:underline font-medium">Google AI Studio</a>.</li>
+                    <li>התחברו עם חשבון ה-Google שלכם.</li>
+                    <li>בתפריט הצדדי (או במסך הראשי), חפשו ולחצו על הכפתור <strong>Get API key</strong>.</li>
+                    <li>לחצו על הכפתור הכחול <strong>Create API key</strong>.</li>
+                    <li>בחרו באפשרות של יצירת מפתח בפרויקט חדש (Create API key in new project).</li>
+                    <li>לאחר מספר שניות יופיע על המסך רצף של אותיות ומספרים. <strong class="bg-yellow-100 text-yellow-800 px-1 rounded">העתיקו אותו ושמרו אותו במקום בטוח</strong> (אל תשתפו אותו עם אף אחד!).</li>
+                </ol>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 mb-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-10 h-10 bg-blue-600 text-white font-bold rounded-lg flex items-center justify-center text-xl shrink-0">2</div>
+                    <h3 class="text-2xl font-bold text-slate-800">הגדרת סביבת העבודה ב-Google Colab</h3>
+                </div>
+                <p class="text-slate-600 mb-4">Colab היא מחברת דיגיטלית שמאפשרת לנו לכתוב ולהריץ קוד פייתון ישירות בדפדפן.</p>
+                <ol class="list-decimal list-inside space-y-3 text-slate-700 marker:text-blue-500 marker:font-bold">
+                    <li>היכנסו ל-<a href="https://colab.research.google.com/" target="_blank" class="text-blue-600 hover:underline font-medium">Google Colab</a>.</li>
+                    <li>לחצו על <strong>New Notebook</strong> (מחברת חדשה).</li>
+                    <li>בתא הקוד הראשון שמופיע (התא האפור), עלינו להתקין את הספרייה של Google Generative AI. העתיקו את השורה הבאה לתא, ולחצו על כפתור ה-Play (משולש קטן בצד) כדי להריץ:</li>
+                </ol>
+                
+                <!-- Setup Code Block -->
+                <div class="mt-4 bg-slate-900 rounded-xl overflow-hidden" dir="ltr">
+                    <div class="flex items-center justify-between px-4 py-2 bg-slate-800/80 border-b border-slate-700">
+                        <span class="text-xs font-mono text-slate-400">bash</span>
+                        <button onclick="copyCode(this)" class="text-xs flex items-center gap-1 text-slate-400 hover:text-white transition-colors">
+                            <i data-lucide="copy" class="w-3 h-3"></i> העתק
+                        </button>
+                    </div>
+                    <pre class="p-4 text-sm font-mono text-blue-300 overflow-x-auto"><code>!pip install -U google-generativeai</code></pre>
+                </div>
+                <p class="text-slate-500 text-sm mt-3"><i data-lucide="info" class="w-4 h-4 inline-block mr-1"></i> המתינו מספר שניות עד שתראו שההתקנה הסתיימה בהצלחה (יופיע V ירוק או הודעת Success).</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 mb-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-10 h-10 bg-blue-600 text-white font-bold rounded-lg flex items-center justify-center text-xl shrink-0">3</div>
+                    <h3 class="text-2xl font-bold text-slate-800">כתיבת הקוד והפרומפט (הלב של הפרויקט)</h3>
+                </div>
+                <p class="text-slate-600 mb-4">
+                    כעת, פתחו תא קוד חדש (לחצו על <code>+ Code</code>). העתיקו אליו את הקוד הבא.<br/>
+                    <strong class="text-rose-600">חשוב:</strong> אל תשכחו להדביק את מפתח ה-API שלכם היכן שכתוב <code class="bg-rose-50 text-rose-700 px-1 rounded" dir="ltr">הכנס_את_המפתח_שלך_כאן</code>.
+                </p>
+                
+                <!-- Main Python Code Block -->
+                <div class="mt-4 bg-slate-900 rounded-xl overflow-hidden shadow-lg" dir="ltr">
+                    <div class="flex items-center justify-between px-4 py-2 bg-slate-800/80 border-b border-slate-700">
+                        <span class="text-xs font-mono text-slate-400">python</span>
+                        <button onclick="copyCode(this)" class="text-xs flex items-center gap-1 text-slate-400 hover:text-white transition-colors">
+                            <i data-lucide="copy" class="w-3 h-3"></i> העתק
+                        </button>
+                    </div>
+                    <pre class="p-4 text-sm font-mono text-green-300 overflow-x-auto leading-relaxed"><code><span class="text-purple-400">import</span> google.generativeai <span class="text-purple-400">as</span> genai
+
+<span class="text-slate-500"># 1. חיבור המפתח שלכם (API Key)</span>
+<span class="text-slate-500"># החליפו את הטקסט בין המרכאות במפתח שהעתקתם בשלב 1</span>
+GOOGLE_API_KEY = <span class="text-yellow-300">"הכנס_את_המפתח_שלך_כאן"</span>
+genai.configure(api_key=GOOGLE_API_KEY)
+
+<span class="text-slate-500"># 2. הגדרת המודל שבו נשתמש</span>
+model = genai.GenerativeModel(<span class="text-yellow-300">'gemini-2.5-flash'</span>)
+
+<span class="text-slate-500"># 3. קליטת נתונים מהמשתמש (אינטראקציה)</span>
+<span class="text-blue-300">print</span>(<span class="text-yellow-300">"=== ברוכים הבאים ליועץ המיזמים החכם ==="</span>)
+<span class="text-blue-300">print</span>(<span class="text-yellow-300">"כאן הופכים קוד להשפעה חברתית."</span>)
+influencer_name = <span class="text-blue-300">input</span>(<span class="text-yellow-300">"איזו דמות תרצו לחקור? (לדוגמה: ד''ר קירה רדינסקי, ג'וי בולמוויני, סאל חאן): "</span>)
+
+<span class="text-slate-500"># 4. הפרומפט המדויק למודל</span>
+<span class="text-slate-500"># כאן אנחנו מגדירים ל-AI בדיוק איזה תפקיד לשחק ואיך לנתח את המידע</span>
+prompt = <span class="text-yellow-300">f"""
+אתה יועץ מיזמים ומומחה להיסטוריה של הבינה המלאכותית.
+אני תלמיד במגמת "מדעני בינה מלאכותית". המטרה שלי היא לחקור כיצד אנשים זיהו בעיה, בחרו בטכנולוגיה הנכונה, והשפיעו על העולם לטובה.
+
+אנא חקור את המשפיען/ית: </span><span class="text-white">{influencer_name}</span><span class="text-yellow-300">.
+
+הצג את המידע בצורה ברורה, מעוררת השראה, ובשפה מותאמת לתלמידי חטיבת ביניים, בדיוק לפי המבנה הבא (השתמש בכותרות):
+
+1. **תעודת זהות**: שם מלא, תחום פעילות מרכזי, ומשפט אחד המסכם את החזון של הדמות.
+2. **הבעיה האנושית**: שאלות טכנולוגיות טובות מתחילות בשאלה אנושית. איזו בעיה או מצוקה הדמות הזו זיהתה לפני שהיא התחילה לפתח פתרון? מי האנשים שסבלו מהבעיה הזו?
+3. **הטכנולוגיה והפתרון**: באיזו טכנולוגיה (למשל: סיווג תמונות, ניתוח נתונים רפואיים, מודלי שפה, אלגוריתמים לזיהוי פנים) הדמות השתמשה כדי לפתור את הבעיה? כיצד הטכנולוגיה עובדת ברמת העיקרון?
+4. **ההשפעה על העולם (Impact)**: כיצד הפתרון הזה הפך קוד להשפעה חברתית? איך הוא עזר לאנשים בפועל?
+5. **המצפן האתי**: טכנולוגיה היא כוח, ועם כוח מגיעה אחריות. נסח שאלה אתית קריטית אחת שעולה מהשימוש בטכנולוגיה של דמות זו (למשל: חשש להטיות בנתונים, פגיעה בפרטיות, או האם זה יחליף בני אדם).
+"""</span>
+
+<span class="text-slate-500"># 5. שליחת הפרומפט והצגת התשובה</span>
+<span class="text-blue-300">print</span>(<span class="text-yellow-300">"\nיועץ המיזמים חוקר את הרשת ומנתח את הנתונים... אנא המתן...\n"</span>)
+
+<span class="text-purple-400">try</span>:
+    response = model.generate_content(prompt)
+    <span class="text-blue-300">print</span>(response.text)
+<span class="text-purple-400">except</span> <span class="text-orange-300">Exception</span> <span class="text-purple-400">as</span> e:
+    <span class="text-blue-300">print</span>(<span class="text-yellow-300">f"אופס, נתקלנו בתקלה (באג). בדקו שהמפתח שלכם תקין. פרטי השגיאה: </span><span class="text-white">{e}</span><span class="text-yellow-300">"</span>)
+</code></pre>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-8">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-10 h-10 bg-blue-600 text-white font-bold rounded-lg flex items-center justify-center text-xl shrink-0">4</div>
+                    <h3 class="text-2xl font-bold text-slate-800">מריצים ומתנסים (Tinkering)</h3>
+                </div>
+                <ol class="list-decimal list-inside space-y-3 text-slate-700 mb-8 marker:text-blue-500 marker:font-bold">
+                    <li>לאחר שהדבקתם את המפתח שלכם והעתקתם את הקוד, לחצו על כפתור ה-Play של התא.</li>
+                    <li>בתחתית התא תופיע שורת קלט (Input).</li>
+                    <li>הקלידו שם של משפיע/ה מתוך נבחרת המשפיעים שלמדנו עליהם (למשל: <code class="bg-slate-100 text-slate-800 px-1 rounded font-mono text-sm" dir="ltr">Joy Buolamwini</code> או <code class="bg-slate-100 text-slate-800 px-1 rounded font-mono text-sm">קירה רדינסקי</code>) ולחצו Enter.</li>
+                    <li>צפו ביועץ המיזמים שלכם מייצר עבורכם דוח מחקר מפורט!</li>
+                </ol>
+
+                <div class="bg-gradient-to-r from-amber-50 to-orange-50 border-r-4 border-amber-500 p-6 rounded-l-xl">
+                    <div class="flex items-center gap-2 text-amber-700 font-bold mb-2">
+                        <i data-lucide="zap" class="w-5 h-5 text-amber-500"></i>
+                        אתגר למתקדמים:
+                    </div>
+                    <p class="text-amber-900">
+                        נסו לשנות את משתנה ה-<code class="bg-amber-100 px-1 rounded font-mono" dir="ltr">prompt</code> שבקוד. הוסיפו לו בקשה נוספת, למשל: 
+                        <br/><span class="italic font-medium">"בסוף הדו"ח, הצע לי רעיון לפרויקט קטן ב-Teachable Machine שאני יכול לבנות בהשראת הדמות הזו"</span>.<br/>
+                        הריצו שוב ובדקו כיצד התשובה משתנה.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Programming Assignment -->
+    <section class="py-20 bg-blue-50 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="bg-white rounded-3xl shadow-xl border border-blue-100 overflow-hidden">
+                <div class="bg-blue-600 px-8 py-6 text-white flex items-center gap-4">
+                    <i data-lucide="terminal-square" class="w-8 h-8 text-blue-200"></i>
+                    <h2 class="text-2xl md:text-3xl font-bold">מטלה: שלב התכנות - בניית "יועץ המיזמים"</h2>
+                </div>
+                
+                <div class="p-8">
+                    <p class="text-slate-600 text-lg mb-8">
+                        במטלה זו, התלמידים יכתבו קוד המיישם את המבנה הבא כדי לבנות את הכלים שחוקרים פתרונות ואתיקה:
+                    </p>
+
+                    <!-- Part 1: Programming -->
+                    <div class="mb-10">
+                        <ul class="space-y-4 text-slate-600 mr-4 md:mr-8 border-r-2 border-blue-200 pr-6">
+                            <li class="relative">
+                                <span class="absolute -right-[33px] top-1.5 w-4 h-4 bg-white border-4 border-blue-400 rounded-full"></span>
+                                <strong class="text-slate-800 text-lg">קבלת הקלט:</strong><br/>
+                                המשתמש מזין את הצורך הקהילתי שאותו הוא מעוניין לפתור.
+                            </li>
+                            <li class="relative">
+                                <span class="absolute -right-[33px] top-1.5 w-4 h-4 bg-white border-4 border-blue-400 rounded-full"></span>
+                                <strong class="text-slate-800 text-lg">בניית הפרומפט המורכב:</strong><br/>
+                                התלמידים ינחו את Gemini להציע פתרונות מעשיים לאותו צורך, ובנוסף, יבקשו ממנו לשאול שאלות אתיות שעולות מהפתרונות המוצעים.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Part 2: Criticism & Submission -->
+                    <div class="bg-amber-50 border-r-4 border-amber-500 p-6 rounded-l-xl">
+                        <p class="text-amber-900 font-bold mb-4 text-lg">
+                            הגישו קובץ דוקס אשר מתאר:
+                        </p>
+                        <ul class="list-disc list-inside space-y-2 text-amber-800 mb-6 font-medium">
+                            <li>הצורך הקהילתי שהעלתם לבינה</li>
+                            <li>הפתרונות המוצעים</li>
+                            <li>שאלות אתיות שעלו מהבוט</li>
+                            <li>קישור למחברת Colab עם הקוד שיצרתם</li>
+                        </ul>
+                        <p class="text-amber-900 font-bold mb-3">
+                            חוו דעתכם:
+                        </p>
+                        <div class="space-y-3">
+                            <div class="bg-white/60 p-4 rounded-lg border border-amber-200/50 flex gap-3 items-start">
+                                <i data-lucide="message-square-dashed" class="w-5 h-5 text-amber-600 shrink-0 mt-0.5"></i>
+                                <span class="text-amber-900">
+                                    האם השאלה האתית שהבוט הציע רלוונטית?
+                                </span>
+                            </div>
+                            <div class="bg-white/60 p-4 rounded-lg border border-amber-200/50 flex gap-3 items-start">
+                                <i data-lucide="scale" class="w-5 h-5 text-amber-600 shrink-0 mt-0.5"></i>
+                                <span class="text-amber-900">
+                                    האם הפתרונות של הבוט עלולים ליצור הטיה (Bias) נגד קבוצה מסוימת?
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Ethical Compass -->
+    <section class="py-24 bg-white relative">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="w-20 h-20 bg-amber-100 rounded-2xl flex items-center justify-center mx-auto mb-8 rotate-3">
+                <i data-lucide="compass" class="w-10 h-10 text-amber-600"></i>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">האתיקה כמצפן</h2>
+            <p class="text-xl text-slate-600 leading-relaxed mb-8">
+                עם כוח גדול מגיעה אחריות עצומה. אנו משתמשים בדימוי המצפן כדי לזכור שעלינו לבחון כל צעד בפיתוח:
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 md:gap-8">
+                <div class="flex items-center justify-center gap-2 bg-slate-50 border border-slate-200 px-6 py-4 rounded-full text-slate-700 font-semibold shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-rose-500"></span>
+                    מי עלול להיפגע מהמערכת?
+                </div>
+                <div class="flex items-center justify-center gap-2 bg-slate-50 border border-slate-200 px-6 py-4 rounded-full text-slate-700 font-semibold shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                    האם הנתונים שלנו מוטים?
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center text-sm border-t border-slate-800">
+        <p>© 2026 מדעני בינה מלאכותית: AI לטובת הכלל. כל הזכויות שמורות.</p>
+    </footer>
+
+    <!-- Initialize Lucide Icons & Copy Script -->
+    <script>
+        lucide.createIcons();
+
+        // Script to handle "Copy Code" buttons
+        function copyCode(button) {
+            // Find the <pre> element right after the header
+            const preElement = button.parentElement.nextElementSibling;
+            const textToCopy = preElement.innerText;
+            
+            // Create a temporary textarea to hold the text
+            const textarea = document.createElement('textarea');
+            textarea.value = textToCopy;
+            // Make it invisible
+            textarea.style.position = 'absolute';
+            textarea.style.left = '-9999px';
+            document.body.appendChild(textarea);
+            
+            // Select and copy
+            textarea.select();
+            document.execCommand('copy');
+            
+            // Cleanup
+            document.body.removeChild(textarea);
+            
+            // Visual feedback
+            const originalHTML = button.innerHTML;
+            button.innerHTML = '<i data-lucide="check" class="w-3 h-3"></i> הועתק!';
+            button.classList.add('text-green-400');
+            button.classList.remove('text-slate-400');
+            lucide.createIcons();
+            
+            // Revert back after 2 seconds
+            setTimeout(() => {
+                button.innerHTML = originalHTML;
+                button.classList.remove('text-green-400');
+                button.classList.add('text-slate-400');
+                lucide.createIcons();
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
